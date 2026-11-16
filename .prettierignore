@@ -1,0 +1,18 @@
+
+# Dependencies
+node_modules/
+
+# Build outputs
+demo/dist/
+dist/
+coverage/
+
+# Generated logs and test results
+test-results/
+error/
+
+# GitHub Actions workflows
+.github/workflows/
+
+# Git metadata
+.git/

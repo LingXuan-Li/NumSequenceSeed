@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NumSequenceSeed Demo</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>NumSequenceSeed</h1>
+      <p>
+        Deterministic random number generator and seed serialization utility.
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Configuration Seed</h2>
+
+        <label>
+          Original Seed
+          <input id="originalSeed" type="number" value="123456789" />
+        </label>
+
+        <label>
+          Minimum
+          <input id="min" type="number" value="1" />
+        </label>
+
+        <label>
+          Maximum
+          <input id="max" type="number" value="100" />
+        </label>
+
+        <label>
+          Count
+          <input id="count" type="number" value="10" />
+        </label>
+
+        <button id="encodeConfig">Encode</button>
+
+        <label>
+          Configuration Seed
+          <input id="configSeed" type="text" placeholder="S..." />
+        </label>
+
+        <button id="decodeConfig">Decode</button>
+
+        <pre id="configResult"></pre>
+      </section>
+
+      <section>
+        <h2>Random Generator</h2>
+
+        <label>
+          Configuration Seed
+          <input id="randomSeed" type="text" placeholder="S..." />
+        </label>
+
+        <button id="generate">Generate</button>
+
+        <pre id="randomResult"></pre>
+      </section>
+
+      <section>
+        <h2>List Seed</h2>
+
+        <label>
+          Integer List
+          <textarea id="listInput">10, 20, 30, -10, -20</textarea>
+        </label>
+
+        <button id="encodeList">Encode</button>
+
+        <label>
+          List Seed
+          <input id="listSeed" type="text" placeholder="L..." />
+        </label>
+
+        <button id="decodeList">Decode</button>
+
+        <pre id="listResult"></pre>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
