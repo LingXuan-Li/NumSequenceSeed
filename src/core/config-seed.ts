@@ -18,18 +18,11 @@
 
 import type { SeedConfig, SeedString } from "../types.js";
 
-import {
-  VALUE_BASE,
-} from "../constants.js";
+import { VALUE_BASE } from "../constants.js";
 
-import {
-  encode62,
-  decode62,
-} from "./base62.js";
+import { encode62, decode62 } from "./base62.js";
 
-import {
-  validateConfig,
-} from "./validation.js";
+import { validateConfig } from "./validation.js";
 
 export function encodeSeed(config: SeedConfig): SeedString {
   validateConfig(config);
@@ -38,13 +31,10 @@ export function encodeSeed(config: SeedConfig): SeedString {
 
   // Pack all configuration values into a single integer.
   const packed =
-    (
-      (
-        BigInt(originalSeed) * VALUE_BASE +
-        BigInt(min + 1_000_000)
-      ) * VALUE_BASE +
-      BigInt(max + 1_000_000)
-    ) * 1_000_000n +
+    ((BigInt(originalSeed) * VALUE_BASE + BigInt(min + 1_000_000)) *
+      VALUE_BASE +
+      BigInt(max + 1_000_000)) *
+      1_000_000n +
     BigInt(count - 1);
 
   return "S" + encode62(packed);
@@ -85,5 +75,5 @@ export function decodeSeed(seed: SeedString): SeedConfig {
 
   validateConfig(config);
 
-    return config;
+  return config;
 }

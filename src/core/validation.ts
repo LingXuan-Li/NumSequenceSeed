@@ -12,10 +12,7 @@
  */
 import type { SeedConfig } from "../types.js";
 
-import {
-  MAX_SEED,
-  MAX_COUNT,
-} from "../constants.js";
+import { MAX_SEED, MAX_COUNT } from "../constants.js";
 
 export function validateConfig(config: SeedConfig): void {
   const { originalSeed, min, max, count } = config;
@@ -44,11 +41,7 @@ export function validateConfig(config: SeedConfig): void {
  * @throws Error if the value is outside the supported range.
  */
 export function validateValue(value: number): void {
-  if (
-    !Number.isSafeInteger(value) ||
-    value < -1_000_000 ||
-    value > 1_000_000
-  ) {
+  if (!Number.isSafeInteger(value) || value < -1_000_000 || value > 1_000_000) {
     throw new Error("Invalid list value");
   }
 }

@@ -12,10 +12,7 @@
  * @returns Base62 encoded string.
  * @throws Error if the value is negative.
  */
-import {
-  CHARSET,
-  BASE62,
-} from "../constants.js";
+import { CHARSET, BASE62 } from "../constants.js";
 
 export function encode62(value: bigint): string {
   if (value < 0n) {

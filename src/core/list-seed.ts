@@ -17,19 +17,11 @@
  */
 import type { SeedString } from "../types.js";
 
-import {
-  VALUE_BASE,
-  MAX_COUNT,
-} from "../constants.js";
+import { VALUE_BASE, MAX_COUNT } from "../constants.js";
 
-import {
-  encode62,
-  decode62,
-} from "./base62.js";
+import { encode62, decode62 } from "./base62.js";
 
-import {
-  validateValue,
-} from "./validation.js";
+import { validateValue } from "./validation.js";
 
 export function encodeList(values: readonly number[]): SeedString {
   if (values.length > MAX_COUNT) {
@@ -42,9 +34,7 @@ export function encodeList(values: readonly number[]): SeedString {
     validateValue(value);
 
     // Append the next value using positional packing.
-    packed =
-      packed * VALUE_BASE +
-      BigInt(value + 1_000_000);
+    packed = packed * VALUE_BASE + BigInt(value + 1_000_000);
   }
 
   return `L${encode62(BigInt(values.length))}.${encode62(packed)}`;
@@ -75,11 +65,7 @@ export function decodeList(seed: SeedString): number[] {
   // Decode and validate the original list length.
   const count = Number(decode62(seed.slice(1, separator)));
 
-  if (
-    !Number.isSafeInteger(count) ||
-    count < 0 ||
-    count > MAX_COUNT
-  ) {
+  if (!Number.isSafeInteger(count) || count < 0 || count > MAX_COUNT) {
     throw new Error("Invalid list length");
   }
 

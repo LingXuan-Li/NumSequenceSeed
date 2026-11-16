@@ -48,9 +48,6 @@ export function generate(seed: SeedString): number[] {
   // Generate the requested number of integers.
   return Array.from(
     { length: config.count },
-    () =>
-      Math.floor(
-        random() * (config.max - config.min + 1)
-      ) + config.min
+    () => Math.floor(random() * (config.max - config.min + 1)) + config.min,
   );
 }

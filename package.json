@@ -1,10 +1,10 @@
 {
   "scripts": {
-        "test": "vitest",
-        "test:run": "vitest run",
-        "test:coverage": "vitest run --coverage",
-        "dev:demo": "vite --config vite.config.ts",
-        "build:demo": "vite build --config vite.config.ts"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "dev:demo": "vite --config vite.config.ts",
+    "build:demo": "vite build --config vite.config.ts"
   },
   "devDependencies": {
     "vite": "^8.3.8"
