@@ -30,7 +30,7 @@ Install directly from GitHub using npm:
 
 ```bash
 npm install github:LingXuan-Li/NumSequenceSeed
-````
+```
 
 To install a specific version:
 
@@ -206,10 +206,7 @@ The library exports the following types:
 typescript
 
 ```typescript
-import type {
-  SeedConfig,
-  SeedString,
-} from "num-sequence-seed";
+import type { SeedConfig, SeedString } from "num-sequence-seed";
 ```
 
 ### `SeedConfig`
@@ -225,12 +222,12 @@ interface SeedConfig {
 }
 ```
 
-| Property | Description |
-| --- | --- |
-| `originalSeed` | Original unsigned 32-bit seed |
-| `min` | Inclusive minimum generated value |
-| `max` | Inclusive maximum generated value |
-| `count` | Number of generated values |
+| Property       | Description                       |
+| -------------- | --------------------------------- |
+| `originalSeed` | Original unsigned 32-bit seed     |
+| `min`          | Inclusive minimum generated value |
+| `max`          | Inclusive maximum generated value |
+| `count`        | Number of generated values        |
 
 ### `SeedString`
 
@@ -245,12 +242,12 @@ NumSequenceSeed validates its inputs before encoding or generating sequences.
 
 ### Configuration Constraints
 
-| Parameter | Supported range |
-| --- | --- |
-| `originalSeed` | 0 to 4,294,967,295 |
-| `min` | -1,000,000 to 1,000,000 |
-| `max` | -1,000,000 to 1,000,000 |
-| `count` | 1 to 1,000,000 |
+| Parameter      | Supported range         |
+| -------------- | ----------------------- |
+| `originalSeed` | 0 to 4,294,967,295      |
+| `min`          | -1,000,000 to 1,000,000 |
+| `max`          | -1,000,000 to 1,000,000 |
+| `count`        | 1 to 1,000,000          |
 
 Additional requirements:
 
@@ -357,4 +354,4 @@ See LICENSE for details.
 
 ## Repository
 
-GitHub: [https://github.com/LingXuan-Li/NumSequenceSeed](<https://github.com/LingXuan-Li/NumSequenceSeed>)
+GitHub: [https://github.com/LingXuan-Li/NumSequenceSeed](https://github.com/LingXuan-Li/NumSequenceSeed)
