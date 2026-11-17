@@ -1,5 +1,22 @@
 {
+  "name": "num-sequence-seed",
+  "version": "1.0.0",
+  "description": "A lightweight and deterministic sequence seed library",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
+    "build": "tsup",
+    "prepare": "npm run build",
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
@@ -8,6 +25,8 @@
   },
   "devDependencies": {
     "prettier": "^3.10.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
     "vite": "^8.3.8",
     "vitest": "^4.1.12"
   }
